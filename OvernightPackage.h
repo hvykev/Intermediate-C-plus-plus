@@ -13,7 +13,7 @@
 
 #ifndef OVERNIGHTPACKAGE_H
 #define OVERNIGHTPACKAGE_H
-
+#pragma 
 #include "Package.h"
 #include <string>
 
@@ -25,15 +25,15 @@ public:
                          const std::string, const std::string, const std::string, const std::string, const std::string, 	
                          double = 0.0, double = 0.0, double = 0.0);//additional member represents additional fee per ounce
 
+        virtual~OvernightPackage() { }//virtual destructor
+        
 	//setters and getters
 	void setfeePerOunce(double);
 	double getfeePerOunce()const;
-	
-	double calculateCost();
-
-	void print() const;//print package object
-	
-	~OvernightPackage(void);
+        
+        //keyword virtual signals intent to override
+        virtual double calculateCost()const override;//calculate cost
+	virtual void print() const override;//print package object
 
 private:
 	//private member representing the additional fee per ounce charged for overnight delivery service

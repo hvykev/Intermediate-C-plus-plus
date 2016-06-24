@@ -13,7 +13,7 @@
 
 #ifndef TWODAYPACKAGE_H
 #define TWODAYPACKAGE_H
-
+#pragma 
 #include "Package.h"
 #include <string>
 
@@ -24,18 +24,15 @@ public:
 	TwoDayPackage(const std::string, const std::string, const std::string, const std::string, const std::string, 
 				  const std::string, const std::string, const std::string, const std::string, const std::string, 
 			      double = 0.0, double = 0.0, double = 0.0);//includes/initializes data member to represent flatFee
-	
+	virtual~TwoDayPackage() { };//virtual destructor
+        
 	//setters and getters for class TwoDayPackage : Package
 	void setflatFee(double);//set flatFee
 	double getflatFee()const;//getflatFee
-
-	//redefine member function calculateCost
-	double calculateCost();
-
-	void print() const;//print package object
-
-	//deconstructor
-	~TwoDayPackage();
+        
+        //keyword virtual signals intent to override
+        virtual double calculateCost() const override;//calculate cost
+	virtual void print() const override;//print package object
 
 private:
 	double flatFee;

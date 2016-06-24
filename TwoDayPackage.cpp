@@ -31,7 +31,7 @@ void TwoDayPackage::setflatFee(double ff)
 
 //redefine calculateCost to compute the shipping cost by adding the flat fee to the weight-based cost calculated by 
 //base class Packages calculateCost function
-double TwoDayPackage::calculateCost()
+double TwoDayPackage::calculateCost() const
 {
 	double total;
 	

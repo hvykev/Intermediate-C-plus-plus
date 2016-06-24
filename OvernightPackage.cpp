@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-#include "OvernightPackage.h"
 #include <stdexcept>
 #include <iostream>
+#include "OvernightPackage.h"
 using namespace std;
 
 OvernightPackage::OvernightPackage
@@ -28,7 +28,7 @@ void OvernightPackage::setfeePerOunce(double fpo)
 
 //redefine calculateCost so that it adds additional fee per ounce to the standard cost per ounce 
 //before calculating shipping cost
-double OvernightPackage::calculateCost()
+double OvernightPackage::calculateCost()const
 {
 	return ((getCost() + feePerOunce) * getWeight());
 }
@@ -55,6 +55,4 @@ void OvernightPackage::print() const
 
 }//end print method
 
-OvernightPackage::~OvernightPackage(void)
-{
-}
+

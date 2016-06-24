@@ -13,7 +13,7 @@
 
 #ifndef PACKAGE_H
 #define PACKAGE_H
-
+#pragma 
 #include <string> //C++ standard string class 
 
 class Package
@@ -93,4 +93,3 @@ private:
 };
 
 #endif /* PACKAGE_H */
-
